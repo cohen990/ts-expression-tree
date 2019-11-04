@@ -1,11 +1,13 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "system",
     "esModuleInterop": true,
-    "target": "es6",
-    "moduleResolution": "node",
+    "target": "ES2018",
     "sourceMap": true,
     "outDir": "dist"
   },
-  "lib": ["es2015"]
+  "include": [
+    "src"
+  ]
 }
