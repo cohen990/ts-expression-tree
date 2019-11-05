@@ -1,1 +1,7 @@
-export type ExpressionType = "root" | "empty" | "return" | "constant" | "invalid";
+export type ExpressionType =
+  | "root"
+  | "empty"
+  | "return"
+  | "constant"
+  | "invalid"
+  | "operation";
