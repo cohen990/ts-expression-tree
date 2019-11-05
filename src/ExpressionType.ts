@@ -4,4 +4,6 @@ export type ExpressionType =
   | "return"
   | "constant"
   | "invalid"
+  | "assignment"
+  | "variable"
   | "operation";

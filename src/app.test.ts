@@ -101,3 +101,20 @@ it("should recognise a mathematical expression being returned", () => {
     new Expression("constant", undefined, new Value("number", `${addend}`))
   );
 });
+
+it("should recognise a variable assignment", () => {
+  const variable = "a";
+  const value = 1;
+  const source = `${variable} = ${value}`;
+  const root = new ExpressionTree(source).build();
+  const child = root.children[0];
+  expect(child.truncate()).toStrictEqual(new Expression("assignment"));
+  const variableExpression = child.children[0];
+  expect(variableExpression).toStrictEqual(
+    new Expression("variable", undefined, new Value("name", variable))
+  );
+  const constantExpression = child.children[1];
+  expect(constantExpression).toStrictEqual(
+    Expression.numberConstant(`${value}`)
+  );
+});
