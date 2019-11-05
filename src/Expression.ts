@@ -36,6 +36,7 @@ export class Expression {
       new Value("operator", operator)
     );
   };
+
   public static invalid = () => {
     return new Expression("invalid");
   };
